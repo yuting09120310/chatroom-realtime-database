@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/firebase/8.9.0/firebase-app.min.js' integrity='sha512-nC66+zehkpg/Hi0JGuizcch2mmCpFF6jCMiVJxPMu2vyEcquDNrTenI4ZGBN5G9OJVNnhzlEQ1IbQa8hvYZbtQ==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/firebase/8.9.0/firebase-database.min.js' integrity='sha512-VznTxsL4sJoS2/NltqekuuqVpubhE6g4XnxTo9wMZ9i0MCA7JC/55vuVh9+Wm9gMCdYJwxAXoaHq27uyqqJMTQ==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.2/vue.global.min.js' integrity='sha512-8/s9yQn+z8od9s81QqVDeLjWdAhp4WaeYwB7TS2+SNPDq78mU1H9aDIyf9Ci8vnMcCj8kWWizcBPwTOGAFzxcQ==' crossorigin='anonymous'></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyAdniN158mG6xr-8kHBxOmDX-tFNo8okLI",
+    authDomain: "alex0310-demo.firebaseapp.com",
+    databaseURL: "https://alex0310-demo-default-rtdb.firebaseio.com",
+    projectId: "alex0310-demo",
+    storageBucket: "alex0310-demo.appspot.com",
+    messagingSenderId: "730341305443",
+    appId: "1:730341305443:web:3b3b46faa2df4ef4bddc56",
+    measurementId: "G-ND864DZK0W"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
+  <script>
+    const database = firebase.database();
+    const testRef = database.ref('post');
+
+    const key = testRef.push().key;
+    console.log(key);
+
+    testRef.on('value', (snapshot) => {
+          const data = snapshot.val();
+          console.log(data);
+    });
+
+    
+  </script>
+
+</body>
+</html>
