@@ -22,7 +22,7 @@
       overflow-y: auto;
     }
     #username{
-      width: 30vh;
+      width: 50vh;
       display: inline-block;
       margin-left: 5px;
     }
@@ -67,7 +67,7 @@
         <div class="card">
           <div class="card-body">
             <label for="username" class="form-label">輸入使用者名稱: </label>
-            <input id="username" type="text" class="form-control" v-model="tempUsername" :disabled="username.length" autofocus="" @keyup.enter="addUsername">
+            <input id="username" type="text" class="form-control" placeholder="請輸入個人姓名開始使用聊天室" v-model="tempUsername" :disabled="username.length" autofocus="" @keyup.enter="addUsername">
             <button type="button" class="btn btn-info" @click="addUsername" :disabled="username.length">
               開始使用
             </button>
